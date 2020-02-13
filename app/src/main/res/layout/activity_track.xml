@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <EditText
+        android:id="@+id/editTextTrackDuration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:text=""
+        android:hint="Duration (in hours)"
+        />
+
+    <EditText
+        android:id="@+id/editTextTrackFrequency"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:text=""
+        android:hint="Frequency (in minutes)"
+        />
+
+    <ScrollView
+        android:id="@+id/scrollViewTrackList"
+        android:layout_width="match_parent"
+        android:layout_height="440dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
+    <EditText
+        android:id="@+id/editTextTrackTarget"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:text=""
+        android:hint="Target (leave blank for current view)"
+        />
+
+    <Button
+        android:id="@+id/buttonStart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Start" />
+</LinearLayout>
