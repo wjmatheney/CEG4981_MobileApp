@@ -32,21 +32,15 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    <ScrollView
-        android:id="@+id/scrollViewTrackList"
+    <ListView
+        android:id="@+id/targetListView"
         android:layout_width="match_parent"
-        android:layout_height="440dp"
+        android:layout_height="0dp"
+        android:choiceMode="singleChoice"
+        android:clickable="true"
+        android:dividerHeight="5dp"
         app:layout_constraintBottom_toTopOf="@+id/editTextTrackTarget"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTrackDuration">
-
-        <LinearLayout
-            android:id="@+id/scrollViewTrackListLL"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" />
-    </ScrollView>
+        app:layout_constraintTop_toBottomOf="@+id/editTextTrackDuration" />
 
     <EditText
         android:id="@+id/editTextTrackTarget"
