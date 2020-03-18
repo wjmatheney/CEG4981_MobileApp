@@ -4,9 +4,12 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.renderscript.ScriptGroup
+import android.util.SparseBooleanArray
 import android.widget.ArrayAdapter
 import android.widget.ListView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.iterator
 import kotlinx.android.synthetic.main.activity_track.*
 import java.io.BufferedReader
 import java.io.InputStream
@@ -41,9 +44,27 @@ class TrackActivity : AppCompatActivity()  {
         listview.adapter = arrayAdapter
         //val starDB = StarDatabase(R.raw.hygdata_v3_short)
 
+
         buttonStart.setOnClickListener {
+
+            //get index of selected item
+            var selectedItemPosition = 0
+            val position: SparseBooleanArray = listview.checkedItemPositions
+            var currentPosition = listview.count - 1
+
+            while (currentPosition >= 0) {
+                if (position.get(currentPosition)){
+                    selectedItemPosition = currentPosition
+                }
+                currentPosition--
+            }
+
+            var tempText = names[selectedItemPosition]
+            Toast.makeText(this, tempText, Toast.LENGTH_SHORT).show()
+
             val intent = Intent(this@TrackActivity, MainActivity::class.java)
             intent.putExtra("currentlyTracking",true)
+            intent.putExtra("isCalibrated",true) // not sure why but, getting reset?
             startActivity(intent)
         }
     }

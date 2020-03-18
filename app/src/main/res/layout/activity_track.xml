@@ -39,19 +39,7 @@
         android:choiceMode="singleChoice"
         android:clickable="true"
         android:dividerHeight="5dp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTrackTarget"
         app:layout_constraintTop_toBottomOf="@+id/editTextTrackDuration" />
-
-    <EditText
-        android:id="@+id/editTextTrackTarget"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Target (leave blank for current view)"
-        android:text=""
-        app:layout_constraintBottom_toTopOf="@+id/buttonStart"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/buttonStart"
